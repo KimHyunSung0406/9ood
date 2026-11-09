@@ -83,15 +83,5 @@
   * 팀 전체 논의 이슈에는 **모든 팀원이 최소 1줄 이상 직접 코멘트**를 남겨 히스토리에 기록을 남깁니다.
   * 회의나 논의가 끝난 뒤에는 다음 할 일(Next actions)과 담당자 이름을 Issue에 명시합니다.
 
-## 8. `docs/team-rules.md` 제출용 영문 요약본 (선택 활용)
-
-강의 레퍼런스 저장소([sujinj-hyu/ossimg](https://www.google.com/search?q=https://github.com/sujinj-hyu/ossimg)) 스타일에 맞춰 영문으로 `docs/team-rules.md`를 구성할 경우 아래 내용을 사용할 수 있습니다.
-
-* **Pull request size**: One function, one bug fix, or one document update per PR, **200 changed lines or fewer**. Never mix bug fixes, new features, and renames in a single PR.
-* **Pull request format**: Use `<area>: <one full sentence>` for the PR title, link the target issue with `Closes #<issue_number>`, and fill out every section of `.github/PULL_REQUEST_TEMPLATE.md`.
-* **Review**: At least **two reviewers** must review and approve within **48 hours**. Use review prefixes (`blocking:`, `suggestion:`, `question:`, `nit:`). Any unresolved `blocking:` comment stops the merge.
-* **Merge**: The approving reviewer (or team leader), not the PR author, presses the merge button using **"Create a merge commit"**, then deletes the working branch immediately. Never edit `gh-pages` manually.
-* **Branch names**: `feat/<name>`, `fix/<name>`, `docs/<name>`, `chore/<name>`
-* **Commit messages**: `<area>: <imperative summary of what changed>` (no vague messages like `wip`, `fix`, or `asdf`).
 * **AI use**: Always disclosed in the `## AI use` section of every pull request with four specific facts (**Tool**, **Where**, **How**, and **After / what was changed or verified by hand**). Write `none` if no AI tool was used.
 * **Documentation & License**: Every public function requires a Google-style docstring (`Args` with types, `Returns`, `Raises`, `Examples`). All dependencies must be permissive (`MIT`, `BSD`, `Apache 2.0`) to stay compatible with our **MIT License**.
