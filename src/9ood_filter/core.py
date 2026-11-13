@@ -3,20 +3,19 @@
 
 
 def detect_personal_info(text):
-    """Find personal information in the given text.
+    """Detect personal information such as names, emails, and phone numbers.
 
     Args:
-        text (str): Text to check.
+        text (str): The input text to scan.
 
     Returns:
         list[dict]: A list of detected personal information.
 
     Examples:
-        >>> detect_personal_info("Email: test@example.com")
+        >>> detect_personal_info("Contact: test@example.com")
         [{'category': 'email', 'value': 'test@example.com'}]
     """
     raise NotImplementedError
-
 
 def replace_personal_info(text, replacements):
     """Replace personal information with custom text.
