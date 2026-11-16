@@ -8,7 +8,7 @@
 
 ## 2. Installation
 
-TODO: TestPyPI에 패키지를 업로드한 뒤 설치 명령을 추가합니다.
+pip install -i https://test.pypi.org/simple/ good-pi-filter
 
 ## 3. Quick start
 
