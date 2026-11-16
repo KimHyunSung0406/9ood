@@ -1,1 +1,22 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
 
+[project]
+name = "good_pi_filter"
+version = "0.1.0"
+description = "A Python package for detecting and anonymizing personal information in documents"
+readme = "README.md"
+license = "MIT"
+requires-python = ">=3.10"
+authors = [
+    { name = "Team 9" }
+]
+dependencies = []
+
+[project.urls]
+Homepage = "https://github.com/KimHyunSung0406/9ood"
+Documentation = "https://KimHyunSung0406.github.io/9ood/"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/good_pi_filter"]
