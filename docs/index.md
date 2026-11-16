@@ -1,4 +1,4 @@
-# 9ood Filter
+# Good_pi_filter
 
 A Python package that detects and anonymizes personal information in documents.
 
