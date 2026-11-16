@@ -1,4 +1,4 @@
-# 프로젝트 제안서(Project proposal): 9ood filter
+# 프로젝트 제안서(Project proposal): good_pi_filter
 
 ## 1. 프로젝트 주제(Project topic)
 
