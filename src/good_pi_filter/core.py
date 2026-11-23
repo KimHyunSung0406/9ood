@@ -1,6 +1,45 @@
 
 """Core functions of 9ood Filter."""
 
+from pathlib import Path
+
+SUPPORTED_EXTENSIONS = {".txt", ".md", ".csv"}
+
+
+def read_document(input_path):
+    """Read and validate a .txt, .md, or .csv document file as a string.
+
+    Args:
+        input_path (str | Path): Path to the input document file (.txt, .md, or .csv).
+
+    Returns:
+        str: The full text content of the file.
+
+    Raises:
+        TypeError: If `input_path` is not a string or Path object.
+        ValueError: If the file extension is not `.txt`, `.md`, or `.csv`.
+        FileNotFoundError: If the file does not exist at `input_path`.
+
+    Examples:
+        >>> read_document("sample.txt")  # doctest: +SKIP
+        '작성자: 홍길동'
+    """
+    if not isinstance(input_path, (str, Path)):
+        raise TypeError("input_path must be a str or Path")
+
+    path = Path(input_path)
+    if path.suffix.lower() not in SUPPORTED_EXTENSIONS:
+        raise ValueError(
+            f"Unsupported file format: '{path.suffix}'. Only .txt, .md, and .csv are supported."
+        )
+    if not path.is_file():
+        raise FileNotFoundError(f"File not found: '{input_path}'")
+
+    try:
+        return path.read_text(encoding="utf-8-sig")
+    except UnicodeDecodeError:
+        return path.read_text(encoding="cp949")
+
 
 def detect_personal_info(text):
     """Detect personal information such as names, emails, and phone numbers.
