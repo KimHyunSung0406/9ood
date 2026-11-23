@@ -5,15 +5,18 @@ import pytest
 from good_pi_filter import read_document
 
 
-# normal: valid .txt and .md files with Korean content
-def test_read_document_reads_txt_and_md(tmp_path):
+# normal: valid .txt, .md, and .csv files with Korean content
+def test_read_document_reads_txt_md_and_csv(tmp_path):
     txt_file = tmp_path / "sample.txt"
     md_file = tmp_path / "notes.md"
+    csv_file = tmp_path / "contacts.csv"
     txt_file.write_text("작성자: 홍길동\n연락처: 010-1234-5678", encoding="utf-8")
     md_file.write_text("# 회의록\n- 이메일: test@example.com", encoding="utf-8")
+    csv_file.write_text("이름,전화번호\n홍길동,010-1234-5678", encoding="cp949")
 
     assert read_document(txt_file) == "작성자: 홍길동\n연락처: 010-1234-5678"
     assert read_document(str(md_file)) == "# 회의록\n- 이메일: test@example.com"
+    assert read_document(csv_file) == "이름,전화번호\n홍길동,010-1234-5678"
 
 
 # boundary: empty file returns empty string
