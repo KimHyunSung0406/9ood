@@ -28,7 +28,10 @@ TODO: 구현에 사용할 외부 패키지와 각 패키지의 라이선스를 �
 
 ## 5. Tests
 
-TODO (later in this course)
+```bash
+pip install -e . pytest
+pytest
+```
 
 ## 6. Documentation
 
